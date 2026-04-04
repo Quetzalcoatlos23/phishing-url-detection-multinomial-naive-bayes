@@ -2,12 +2,12 @@
 Implementasi algoritma Multinomial Naïve Bayes untuk deteksi phishing URL dengan membandingkan representasi fitur Bag of Words (BoW) dan TF-IDF. Proyek ini merupakan bagian dari penelitian skripsi di Program Studi Teknik Komputer, Universitas Amikom Yogyakarta.
 # Phishing URL Detection using Machine Learning
 
-## Overview
+## Ringkasan
 Project ini merupakan implementasi sistem deteksi phishing URL menggunakan algoritma Machine Learning, yaitu Multinomial Naïve Bayes. Tujuan dari project ini adalah untuk mengklasifikasikan URL sebagai phishing atau legitimate.
 
 ---
 
-## Technologies Used
+## Tools yang digunakan
 - Python
 - Scikit-learn
 - Pandas, NumPy
@@ -16,7 +16,7 @@ Project ini merupakan implementasi sistem deteksi phishing URL menggunakan algor
 
 ---
 
-## Methodology
+## Metodologi
 1. Data Preprocessing
 2. Feature Extraction:
    - Bag of Words (BoW)
@@ -34,7 +34,7 @@ Project ini merupakan implementasi sistem deteksi phishing URL menggunakan algor
 
 ---
 
-## Results
+## Hasil
 Berdasarkan hasil pengujian menggunakan representasi fitur BoW, model Multinomial Naïve Bayes mampu melakukan klasifikasi URL ke dalam empat kelas dengan performa yang baik. Hasil ini menunjukkan bahwa pendekatan BoW efektif dalam menangkap pola karakteristik URL pada dataset phishing yang digunakan.
 
 ### Classification Report BoW
@@ -63,20 +63,26 @@ Berdasarkan hasil pengujian menggunakan representasi fitur BoW, model Multinomia
 - Recall: ~77%
 
 <p>Meskipun kedua metode tersebut sama-sama kuat, BoW sedikit lebih baik pada ketepatan prediksi kelas mayoritas (benign), sedangkan TF-IDF menunjukkan keunggulan dalam meminimalisir false negative pada kelas phishing. Secara garis besar, kedua metode mampu mengenali seluruh kelas dengan baik, dan perbedaan performanya lebih terlihat pada distribusi jumlah kesalahan prediksi antar kelas, di mana TF-IDF cenderung lebih agresif dalam mendeteksi Phishing meskipun distribusi kesalahan pada kelas Benign sedikit lebih besar dibandingkan BoW.</p>
----
 
-## Comparison
+## Analisis Waktu Komputasi
+Selain hal-hal mengenai keakuratan dan metrik klasifikasi, waktu yang dibutuhkan untuk menghitung juga merupakan faktor penting dalam menilai seberapa efisien suatu representasi fitur dalam memproses data dalam jumlah besar. 
+<img width="661" height="139" alt="Picture5" src="https://github.com/user-attachments/assets/eb740ffc-c549-4a73-bd68-228dec6e9120" />
+
+- BoW lebih unggul pada tahap ekstraksifitur (vektorisasi)
+- TF-IDF sedikit lebih unggul pada tahap eksekusi model (Training+Prediction).
+
+## Hasil Cross Validation
+<img width="208" height="100" alt="Picture6" src="https://github.com/user-attachments/assets/125e6794-22a3-4fd0-a127-f511cddedf66" /> 
+
+Hasil 5-Fold Cross Validation menunjukkan bahwa model Multinomial Naïve Bayes dengan representasi fitur BoW memiliki nilai rata-rata akurasi yang tinggi dengan standar deviasi yang rendah. Hal ini mengindikasikan bahwa model memiliki performa yang stabil dan tidak mengalami overfitting terhadap data latih.
+
+## Perbandingan
 Perbandingan antara metode BoW dan TF-IDF menunjukkan bahwa:
-- TF-IDF memberikan performa yang lebih stabil
-- BoW lebih sederhana namun kurang optimal.
+- Pada perbedaan metrik, BoW sedikit lebih unggul pada Accuracy & Recall. Dan pada waktu, BoW sedikit lebih cepat pada waktu ekstraksi fitur (Vectorization)
+- Sedangkan TF-IDF lebih unggul pada Precision di beberapa Kelas, serta F1-Score. Lalu untuk waktu sendiri, TF-IDF lebih cepat pada waktu eksekusi model (Training+Prediction)
 ---
 
-
-
-## 🚀 How to Run
+## How to Run
 1. Clone repository:
 ```bash
-git clone https://github.com/username/phishing-url-detecti<img width="530" height="280" alt="Picture1" src="https://github.com/user-attachments/assets/2c3a5acb-56a7-46b1-b6e0-b3bf672ee079" />
-on.git
-<img width="530" height="280" alt="Picture1" src="https://github.com/user-attachments/assets/4a00341c-835b-4f3c-b22e-b40e82881ae7" />
-![Uploading Picture1.png…]()
+git clone https://github.com/username/phishing-url-detection.git
