@@ -62,14 +62,16 @@ Berdasarkan hasil pengujian menggunakan representasi fitur BoW, model Multinomia
 - Precision: ~81%
 - Recall: ~77%
 
+<p>Meskipun kedua metode tersebut sama-sama kuat, BoW sedikit lebih baik pada ketepatan prediksi kelas mayoritas (benign), sedangkan TF-IDF menunjukkan keunggulan dalam meminimalisir false negative pada kelas phishing. Secara garis besar, kedua metode mampu mengenali seluruh kelas dengan baik, dan perbedaan performanya lebih terlihat pada distribusi jumlah kesalahan prediksi antar kelas, di mana TF-IDF cenderung lebih agresif dalam mendeteksi Phishing meskipun distribusi kesalahan pada kelas Benign sedikit lebih besar dibandingkan BoW.</p>
 ---
 
-## 📈 Comparison
+## Comparison
 Perbandingan antara metode BoW dan TF-IDF menunjukkan bahwa:
 - TF-IDF memberikan performa yang lebih stabil
-- BoW lebih sederhana namun kurang optimal
-
+- BoW lebih sederhana namun kurang optimal.
 ---
+
+
 
 ## 🚀 How to Run
 1. Clone repository:
