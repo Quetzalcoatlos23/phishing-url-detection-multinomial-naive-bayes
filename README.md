@@ -15,6 +15,12 @@ Project ini merupakan implementasi sistem deteksi phishing URL menggunakan algor
 - Text Classification Algorithm (Multinomial Naïve Bayes)
 
 ---
+---
+
+## Dataset yang Digunakan
+Source: https://www.kaggle.com/datasets/sid321axn/malicious-urls-dataset
+
+---
 
 ## Metodologi
 1. Data Preprocessing
