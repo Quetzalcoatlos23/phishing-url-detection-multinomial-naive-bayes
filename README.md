@@ -20,6 +20,11 @@ Project ini merupakan implementasi sistem deteksi phishing URL menggunakan algor
 ## Dataset yang Digunakan
 Source: https://www.kaggle.com/datasets/sid321axn/malicious-urls-dataset
 
+<img width="790" height="590" alt="image" src="https://github.com/user-attachments/assets/3d2239fd-c84c-4d20-a0a1-8dc88e33d63b" />
+
+Terlihat bahwa jumlah data pada setiap kelas tidak merata. Kelas URL yang tidak berbahaya memiliki jumlah data yang jauh lebih banyak dibandingkan kelas URL phishing dan kategori URL lainnya. Situasi ini menunjukkan adanya masalah ketidakseimbangan data, yang bisa mengganggu kemampuan model klasifikasi, terutama dalam mengenali kelas dengan jumlah data lebih sedikit seperti phishing.
+Ketidakseimbangan jumlah data bisa membuat model cenderung memprediksi kelas yang lebih banyak dan mengabaikan kelas yang sedikit. Meskipun akurasi model terlihat tinggi, kemampuannya dalam mendeteksi URL phishing mungkin belum cukup baik. Untuk mengatasi ini, digunakanlah metode SMOTE pada data latih untuk meningkatkan jumlah data kelas minoritas dan membantu model memahami pola URL phishing secara lebih baik.
+
 ---
 
 ## Metodologi
@@ -40,6 +45,11 @@ Source: https://www.kaggle.com/datasets/sid321axn/malicious-urls-dataset
 
 ---
 
+## Alur Pengujian Model
+<img width="294" height="560" alt="Picture7" src="https://github.com/user-attachments/assets/d2599589-ccfd-407f-b9d1-0099050c1c64" />
+
+---
+
 ## Hasil
 Berdasarkan hasil pengujian menggunakan representasi fitur BoW, model Multinomial Naïve Bayes mampu melakukan klasifikasi URL ke dalam empat kelas dengan performa yang baik. Hasil ini menunjukkan bahwa pendekatan BoW efektif dalam menangkap pola karakteristik URL pada dataset phishing yang digunakan.
 
@@ -50,10 +60,12 @@ Berdasarkan hasil pengujian menggunakan representasi fitur BoW, model Multinomia
 <img width="525" height="280" alt="Picture2" src="https://github.com/user-attachments/assets/346bab3d-ac0e-4aca-8d49-e341b3fa2813" />
 
 ### Confusion Matrix BoW
-<img width="460" height="407" alt="Picture3" src="https://github.com/user-attachments/assets/98af8381-42d7-4529-bf83-d67b94674bc0" />
+<img width="531" height="470" alt="image" src="https://github.com/user-attachments/assets/9b8493f2-96d2-4613-b3bb-1c0e5f8e0a8e" />
+
 
 ### Confusion Matrix TF-IDF
-<img width="482" height="426" alt="Picture4" src="https://github.com/user-attachments/assets/3622bd83-1b83-4231-852b-f09b5f4acb04" />
+<img width="531" height="470" alt="image" src="https://github.com/user-attachments/assets/41de6d75-082e-4ab6-be8e-b2304602d4bf" />
+
 
 
 ### Model Performance BoW
@@ -70,6 +82,8 @@ Berdasarkan hasil pengujian menggunakan representasi fitur BoW, model Multinomia
 
 <p>Meskipun kedua metode tersebut sama-sama kuat, BoW sedikit lebih baik pada ketepatan prediksi kelas mayoritas (benign), sedangkan TF-IDF menunjukkan keunggulan dalam meminimalisir false negative pada kelas phishing. Secara garis besar, kedua metode mampu mengenali seluruh kelas dengan baik, dan perbedaan performanya lebih terlihat pada distribusi jumlah kesalahan prediksi antar kelas, di mana TF-IDF cenderung lebih agresif dalam mendeteksi Phishing meskipun distribusi kesalahan pada kelas Benign sedikit lebih besar dibandingkan BoW.</p>
 
+---
+
 ## Analisis Waktu Komputasi
 Selain hal-hal mengenai keakuratan dan metrik klasifikasi, waktu yang dibutuhkan untuk menghitung juga merupakan faktor penting dalam menilai seberapa efisien suatu representasi fitur dalam memproses data dalam jumlah besar. 
 <img width="661" height="139" alt="Picture5" src="https://github.com/user-attachments/assets/eb740ffc-c549-4a73-bd68-228dec6e9120" />
@@ -77,11 +91,17 @@ Selain hal-hal mengenai keakuratan dan metrik klasifikasi, waktu yang dibutuhkan
 - BoW lebih unggul pada tahap ekstraksifitur (vektorisasi)
 - TF-IDF sedikit lebih unggul pada tahap eksekusi model (Training+Prediction).
 
+---
 ## Hasil Cross Validation
 <img width="208" height="100" alt="Picture6" src="https://github.com/user-attachments/assets/125e6794-22a3-4fd0-a127-f511cddedf66" /> 
 
 Hasil 5-Fold Cross Validation menunjukkan bahwa model Multinomial Naïve Bayes dengan representasi fitur BoW memiliki nilai rata-rata akurasi yang tinggi dengan standar deviasi yang rendah. Hal ini mengindikasikan bahwa model memiliki performa yang stabil dan tidak mengalami overfitting terhadap data latih.
 
+---
+## Perbandingan F1-Score
+<img width="889" height="490" alt="image" src="https://github.com/user-attachments/assets/1dc7ea5d-8b8b-4b92-9dc7-82a6aa744678" />
+
+---
 ## Perbandingan
 Perbandingan antara metode BoW dan TF-IDF menunjukkan bahwa:
 - Pada perbedaan metrik, BoW sedikit lebih unggul pada Accuracy & Recall. Dan pada waktu, BoW sedikit lebih cepat pada waktu ekstraksi fitur (Vectorization)
