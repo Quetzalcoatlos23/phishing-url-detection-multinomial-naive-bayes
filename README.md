@@ -38,8 +38,7 @@ Project ini merupakan implementasi sistem deteksi phishing URL menggunakan algor
 Berdasarkan hasil pengujian menggunakan representasi fitur BoW, model Multinomial Naïve Bayes mampu melakukan klasifikasi URL ke dalam empat kelas dengan performa yang baik. Hasil ini menunjukkan bahwa pendekatan BoW efektif dalam menangkap pola karakteristik URL pada dataset phishing yang digunakan.
 
 ### Classification Report BoW
-
-
+![Classification Report BoW]
 ### Confusion Matrix
 ![Confusion Matrix](images/confusion_matrix.png)
 
@@ -59,4 +58,6 @@ Perbandingan antara metode BoW dan TF-IDF menunjukkan bahwa:
 ## 🚀 How to Run
 1. Clone repository:
 ```bash
-git clone https://github.com/username/phishing-url-detection.git
+git clone https://github.com/username/phishing-url-detecti<img width="530" height="280" alt="Picture1" src="https://github.com/user-attachments/assets/2c3a5acb-56a7-46b1-b6e0-b3bf672ee079" />
+on.git
+![Uploading Picture1.png…]()
