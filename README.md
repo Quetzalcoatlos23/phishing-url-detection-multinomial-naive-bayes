@@ -38,13 +38,29 @@ Project ini merupakan implementasi sistem deteksi phishing URL menggunakan algor
 Berdasarkan hasil pengujian menggunakan representasi fitur BoW, model Multinomial Naïve Bayes mampu melakukan klasifikasi URL ke dalam empat kelas dengan performa yang baik. Hasil ini menunjukkan bahwa pendekatan BoW efektif dalam menangkap pola karakteristik URL pada dataset phishing yang digunakan.
 
 ### Classification Report BoW
-![Classification Report BoW](Picture1.png)
-### Confusion Matrix
-![Confusion Matrix](images/confusion_matrix.png)
+<img width="530" height="280" alt="Picture1" src="https://github.com/user-attachments/assets/8dabde46-4359-4be9-8d38-27117da8ebae" />
 
-### Model Performance
+### Classification Report TF-IDF
+<img width="525" height="280" alt="Picture2" src="https://github.com/user-attachments/assets/346bab3d-ac0e-4aca-8d49-e341b3fa2813" />
+
+### Confusion Matrix BoW
+<img width="460" height="407" alt="Picture3" src="https://github.com/user-attachments/assets/98af8381-42d7-4529-bf83-d67b94674bc0" />
+
+### Confusion Matrix TF-IDF
+<img width="482" height="426" alt="Picture4" src="https://github.com/user-attachments/assets/3622bd83-1b83-4231-852b-f09b5f4acb04" />
+
+
+### Model Performance BoW
 - Accuracy: ~78%
-- F1 Score: (isi dari hasil kamu)
+- F1 Score: ~78%
+- Precision: ~79%
+- Recall: ~78%
+
+### Model Performance TF-IDF
+- Accuracy: ~77%
+- F1 Score: ~79%
+- Precision: ~81%
+- Recall: ~77%
 
 ---
 
@@ -60,4 +76,5 @@ Perbandingan antara metode BoW dan TF-IDF menunjukkan bahwa:
 ```bash
 git clone https://github.com/username/phishing-url-detecti<img width="530" height="280" alt="Picture1" src="https://github.com/user-attachments/assets/2c3a5acb-56a7-46b1-b6e0-b3bf672ee079" />
 on.git
+<img width="530" height="280" alt="Picture1" src="https://github.com/user-attachments/assets/4a00341c-835b-4f3c-b22e-b40e82881ae7" />
 ![Uploading Picture1.png…]()
