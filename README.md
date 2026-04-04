@@ -85,4 +85,4 @@ Perbandingan antara metode BoW dan TF-IDF menunjukkan bahwa:
 ## How to Run
 1. Clone repository:
 ```bash
-git clone https://github.com/username/phishing-url-detection.git
+git clone https://github.com/Quetzalcoatlos23/phishing-url-detection-multinomial-naive-bayes.git
