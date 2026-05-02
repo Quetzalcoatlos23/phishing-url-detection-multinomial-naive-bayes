@@ -1,6 +1,6 @@
 # phishing-url-detection-multinomial-naive-bayes
 Implementasi algoritma Multinomial Naïve Bayes untuk deteksi phishing URL dengan membandingkan representasi fitur Bag-of-Words (BoW) dan TF-IDF. Proyek ini merupakan bagian dari penelitian skripsi di Program Studi Teknik Komputer, Universitas Amikom Yogyakarta dengan judul Skripsi:
-# "Multinomial Naive Bayes untuk Deteksi Phishing Dengan Perbandingan Representasi Fitur Bag of Words dan TF-IDF"
+# "Multinomial Naïve Bayes untuk Deteksi Phishing Dengan Perbandingan Representasi Fitur Bag of Words dan TF-IDF"
 
 ## Ringkasan
 Project ini merupakan implementasi sistem deteksi phishing URL menggunakan algoritma Machine Learning, yaitu Multinomial Naïve Bayes. Tujuan dari proyek ini adalah untuk mengklasifikasikan URL sebagai phishing atau legitimate.
