@@ -8,8 +8,8 @@ Proyek ini merupakan penelitian tugas akhir yang berfokus pada deteksi keamanan 
 ## Technical Workflow
 1. **Preprocessing Data:** Pembersihan data URL mentah untuk menghilangkan *Noise*
 2. **Feature Representation:** Mengonversi teks URL menjadi bentuk numerik menggunakan dua metode:
-  - **Bag of Words (BoW):** Menghitung frekuensi kemunculan kata dalam dataset.
-  - **Term Frequency-Inverse Document Frequency (TF-IDF):** Menghitung bobot kepentingan kata berdasarkan kelangkaannya di seluruh dokumen.
+    - **Bag of Words (BoW):** Menghitung frekuensi kemunculan kata dalam dataset.
+    - **Term Frequency-Inverse Document Frequency (TF-IDF):** Menghitung bobot kepentingan kata berdasarkan kelangkaannya di seluruh dokumen.
 3. **Synthetic Minority Oversampling Technique (SMOTE):** Mengatasi masalah ketidakseimbangan dataset *(imbalanced dataset)* dengan menerapkan teknik SMOTE pada data yang telah di-vektorisasi (data numerik).
 4. **Classification:** Menggunakan algoritma Multinomial Naive Bayes (MNB) yang sangat efektif untuk tugas klasifikasi teks dan data frekuensi.
 
@@ -57,6 +57,45 @@ Ketidakseimbangan jumlah data bisa membuat model cenderung memprediksi kelas yan
 <img width="294" height="560" alt="Picture7" src="https://github.com/user-attachments/assets/d2599589-ccfd-407f-b9d1-0099050c1c64" />
 
 ---
+
+---
+
+## Code Snippet
+1. **Data Preprocessing:**
+
+   Tahap text preprocessing dilakukan untuk membersihkan data URL sebelum masuk ke proses pembobotan dan klasifikasi. Data URL yang masih dalam bentuk mentah biasanya mengandung berbagai unsur yang tidak penting, seperti protokol HTTP/HTTPS, simbol khusus, angka, serta variasi penulisan huruf yang tidak konsisten.
+   ```def clean_url(url):
+    url = re.sub(r'^https?:\/\/', '', url)
+    url = re.sub(r'www\.', '', url)
+    url = re.sub(r'[\/:._=?\-&%]', ' ', url)
+    url = re.sub(r'[^a-zA-Z]', ' ', url)
+    url = re.sub(r'\s+', ' ', url).strip().lower()
+    return url
+
+   dataset["clean_url"] = dataset["url"].apply(clean_url)
+   ```
+2. **Feature Extraction (BoW & TF-IDF):**
+
+   Bagian ini menunjukkan bagaimana mesin mengubah teks URL mentah menjadi data numerik. Ini adalah langkah krusial sebelum masuk ke pemrosesan data lainnya.
+   ```
+   from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+
+   vectorizers = {
+    "BoW": CountVectorizer(analyzer='char', ngram_range=(3,5), max_features=10000),
+    "TF-IDF": TfidfVectorizer(analyzer='char', ngram_range=(3,5), max_features=10000)
+   }
+   ```
+   
+3. **Menangani Imbalanced Dataset (SMOTE):**
+
+   SMOTE diterapkan hanya pada data latih hasil vektorisasi dengan tujuan untuk mengatasi ketidakseimbangan jumlah data antar kelas URL
+   ```
+   from imblearn.over_sampling import SMOTE
+   smote = SMOTE(random_state=42)
+    X_train_bal, y_train_bal = smote.fit_resample(X_train_vec, y_train)
+   ```
+
+   
 
 ## Hasil
 Berdasarkan hasil pengujian menggunakan representasi fitur BoW, model Multinomial Naïve Bayes mampu melakukan klasifikasi URL ke dalam empat kelas dengan performa yang baik. Hasil ini menunjukkan bahwa pendekatan BoW efektif dalam menangkap pola karakteristik URL pada dataset phishing yang digunakan.
