@@ -3,7 +3,15 @@ Implementasi algoritma Multinomial Naïve Bayes untuk deteksi phishing URL denga
 # "Multinomial Naïve Bayes untuk Deteksi Phishing Dengan Perbandingan Representasi Fitur Bag of Words dan TF-IDF"
 
 ## Ringkasan
-Project ini merupakan implementasi sistem deteksi phishing URL menggunakan algoritma Machine Learning, yaitu Multinomial Naïve Bayes. Tujuan dari proyek ini adalah untuk mengklasifikasikan URL sebagai phishing atau legitimate.
+Proyek ini merupakan penelitian tugas akhir yang berfokus pada deteksi keamanan siber, khususnya klasifikasi URL phishing. Mengingat ancaman serangan siber yang terus meningkat, sistem ini dikembangkan untuk secara otomatis mengidentifikasi URL berbahaya menggunakan pendekatan Machine Learning.
+
+## Technical Workflow
+1. **Preprocessing Data:** Pembersihan data URL mentah untuk menghilangkan *Noise*
+2. **Feature Representation:** Mengonversi teks URL menjadi bentuk numerik menggunakan dua metode:
+  - **Bag of Words (BoW):** Menghitung frekuensi kemunculan kata dalam dataset.
+  - **Term Frequency-Inverse Document Frequency (TF-IDF):** Menghitung bobot kepentingan kata berdasarkan kelangkaannya di seluruh dokumen.
+3. **Synthetic Minority Oversampling Technique (SMOTE):** Mengatasi masalah ketidakseimbangan dataset *(imbalanced dataset)* dengan menerapkan teknik SMOTE pada data yang telah di-vektorisasi (data numerik).
+4. **Classification:** Menggunakan algoritma Multinomial Naive Bayes (MNB) yang sangat efektif untuk tugas klasifikasi teks dan data frekuensi.
 
 ---
 
